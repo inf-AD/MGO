@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профсоюзные ресурсы</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #009b35;
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .resource-card {
+            background: #ffffff;
+            border: 2px solid #009b35;
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 155, 53, 0.1);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 155, 53, 0.2);
+            border-color: #ff7c2c;
+        }
+
+        .resource-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .emblem-placeholder {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 3px solid #ff7c2c;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .emblem-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Логотипы, которые смотрятся крупнее остальных — немного уменьшены */
+        .emblem-placeholder img.logo-inset {
+            width: 88%;
+            height: 88%;
+        }
+
+        .resource-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #009b35;
+            line-height: 1.3;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Рамка кнопки окрашена в цвет собственной каймы иконки соцсети,
+           чтобы она не читалась как отдельная обводка вокруг логотипа */
+        .social-btn.vk {
+            background: #009b35;
+            border-color: #1675d2;
+        }
+
+        .social-btn.vk:hover {
+            background: rgba(0, 155, 53, 0.8);
+        }
+
+        /* Край иконки МАХ — градиент, поэтому любое кольцо вокруг неё
+           читается как граница логотипа. Рамки нет, логотип занимает
+           всю кнопку целиком */
+        .social-btn.max {
+            border: 0;
+            background: transparent;
+        }
+
+        .social-btn.tg {
+            background: #009b35;
+            border-color: #26a4e3;
+        }
+
+        .social-btn.tg:hover {
+            background: rgba(0, 155, 53, 0.8);
+        }
+
+        .social-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .social-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .social-btn.disabled {
+            background: #e0e0e0;
+            border-color: #e0e0e0;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .social-btn.disabled:hover {
+            transform: none;
+        }
+
+        .social-btn.disabled svg {
+            fill: #999;
+        }
+
+        .social-btn.disabled img {
+            filter: grayscale(1);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Профсоюзные ресурсы</h1>
+        
+        <div class="resources-grid">
+            <!-- 1. МГО Общероссийского Профсоюза образования -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img class="logo-inset" src="assets/logo-mgo.jpg" alt="МГО Общероссийского Профсоюза образования" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">МГО Общероссийского Профсоюза образования</div>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://max.ru/join/AAYytXb_Ay7mKAm0gd2gv6tMqrOhUZe0PkQ7SIPon_w" target="_blank" class="social-btn max" title="МАХ">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </a>
+                    <a href="https://vk.ru/mgoprof_ru" target="_blank" class="social-btn vk" title="ВКонтакте">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </a>
+                    <a href="https://t.me/mgoprof_ru" target="_blank" class="social-btn tg" title="Телеграм">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. Профсоюз образования ЮЗАО и ТиНАО -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img class="logo-inset" src="assets/logo-uzao-tinao.jpg" alt="Профсоюз образования ЮЗАО и ТиНАО" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">Профсоюз образования ЮЗАО и ТиНАО</div>
+                </div>
+                <div class="social-buttons">
+                    <div class="social-btn disabled" title="МАХ недоступен">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </div>
+                    <a href="https://vk.ru/top_uzao_tinao" target="_blank" class="social-btn vk" title="ВКонтакте">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </a>
+                    <a href="https://t.me/top_uzao_tinao" target="_blank" class="social-btn tg" title="Телеграм">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3. СМП ЮЗАО-ТиНАО -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img class="logo-inset" src="assets/logo-smp-uzao-tinao.jpg" alt="СМП ЮЗАО-ТиНАО" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">СМП ЮЗАО-ТиНАО</div>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://max.ru/join/p-_1qeswAwOaaEXG7Kh8nLJgQd4bxlXQl0fsoSyBtng" target="_blank" class="social-btn max" title="МАХ">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </a>
+                    <div class="social-btn disabled" title="ВК недоступен">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </div>
+                    <a href="https://t.me/smpyuzaotinao" target="_blank" class="social-btn tg" title="Телеграм">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4. Профсоюз 2094 -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img src="assets/logo-2094.jpg" alt="Профсоюз 2094" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">Профсоюз 2094</div>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://max.ru/join/1ixEQl2WbzicRY2ms9og3chBfun7eX0D3cbznwpGqbg" target="_blank" class="social-btn max" title="МАХ">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </a>
+                    <a href="https://vk.ru/club238464295" target="_blank" class="social-btn vk" title="ВКонтакте">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </a>
+                    <a href="https://t.me/profsouz2094" target="_blank" class="social-btn tg" title="Телеграм">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 5. Молсовет 2094 -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img src="assets/logo-molsovet.jpg" alt="Молсовет 2094" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">Молсовет 2094</div>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://max.ru/join/6BUp2P5GqGOqwXeoryJhcmruBFklXaa2fcQ2YIDolyA" target="_blank" class="social-btn max" title="МАХ">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </a>
+                    <div class="social-btn disabled" title="ВК недоступен">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </div>
+                    <a href="https://t.me/+VRhjJff6UTPyu076" target="_blank" class="social-btn tg" title="Телеграм">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 6. Педагогический клуб «Наставник» -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img class="logo-inset" src="assets/logo-nastavnik.jpg" alt="Педагогический клуб «Наставник»" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">Педагогический клуб «Наставник»</div>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://max.ru/join/PKLGZsUD2FTSH3TnU78coa9wFfI0f_JZNkCIuxJAVPw" target="_blank" class="social-btn max" title="МАХ">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </a>
+                    <a href="https://vk.ru/club230538781" target="_blank" class="social-btn vk" title="ВКонтакте">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </a>
+                    <a href="https://t.me/+NKJybOOX4Ds4YzFi" target="_blank" class="social-btn tg" title="Телеграм">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 7. Жить. Учить. Бежать -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img class="logo-inset" src="assets/logo-zhit-uchit-bezhat.jpg" alt="Жить. Учить. Бежать" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">Жить. Учить. Бежать</div>
+                </div>
+                <div class="social-buttons">
+                    <div class="social-btn disabled" title="МАХ недоступен">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </div>
+                    <a href="https://vk.ru/zhit.uchit.bezhat" target="_blank" class="social-btn vk" title="ВКонтакте">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </a>
+                    <div class="social-btn disabled" title="ТГ недоступен">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. САМП -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img class="logo-inset" src="assets/logo-samp.png" alt="САМП" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">САМП</div>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://max.ru/join/9KVEWnn3knQXuwYe--fvxsSZZmqoaVliUr_DcgLzbOU" target="_blank" class="social-btn max" title="МАХ">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </a>
+                    <a href="https://vk.ru/mgo_samp" target="_blank" class="social-btn vk" title="ВКонтакте">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </a>
+                    <a href="https://t.me/samp_mos" target="_blank" class="social-btn tg" title="Телеграм">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 9. День молодого педагога (ДМП) -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img src="assets/logo-dmp.jpg" alt="День молодого педагога (ДМП)" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">День молодого педагога (ДМП)</div>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://max.ru/join/7g6fDxBODtO9-8uDVNNlNdLlq9eb1GkWnELC8U9_90I" target="_blank" class="social-btn max" title="МАХ">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </a>
+                    <a href="https://vk.ru/sampmos_dmp" target="_blank" class="social-btn vk" title="ВКонтакте">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </a>
+                    <a href="https://t.me/dmpsamp" target="_blank" class="social-btn tg" title="Телеграм">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 10. САМП_ПроСвет -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img src="assets/logo-samp-prosvet.jpg" alt="САМП_ПроСвет" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">САМП_ПроСвет</div>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://max.ru/join/jfNy7xxh87XuTpMfDQ8wWZSNTe-jvuRx0QZXhlzn890" target="_blank" class="social-btn max" title="МАХ">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </a>
+                    <div class="social-btn disabled" title="ВК недоступен">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </div>
+                    <a href="https://t.me/samp_prosvet" target="_blank" class="social-btn tg" title="Телеграм">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 11. САМП_арт -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img src="assets/logo-samp-art.jpg" alt="САМП_арт" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">САМП_арт</div>
+                </div>
+                <div class="social-buttons">
+                    <div class="social-btn disabled" title="МАХ недоступен">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </div>
+                    <a href="https://vk.com/club237243783" target="_blank" class="social-btn vk" title="ВКонтакте">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </a>
+                    <a href="https://t.me/Art_SAMP" target="_blank" class="social-btn tg" title="Телеграм">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 12. Дорогу педагогу -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img src="assets/logo-dorogu-pedagogu.jpg" alt="Дорогу педагогу" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">Дорогу педагогу</div>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://max.ru/join/auUy9hVSwMhaMyZR5ZIN0davP1Ownhu62OBNlgNpctY" target="_blank" class="social-btn max" title="МАХ">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </a>
+                    <div class="social-btn disabled" title="ВК недоступен">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </div>
+                    <a href="https://t.me/samptravel" target="_blank" class="social-btn tg" title="Телеграм">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 13. Профсоюзные голоса -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img class="logo-inset" src="assets/logo-prof-golosa.jpg" alt="Профсоюзные голоса" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">Профсоюзные голоса</div>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://web.max.ru/-73192579624294" target="_blank" class="social-btn max" title="МАХ">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </a>
+                    <div class="social-btn disabled" title="ВК недоступен">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </div>
+                    <a href="https://t.me/prof_golosa" target="_blank" class="social-btn tg" title="Телеграм">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 14. ПроДвижения -->
+            <div class="resource-card">
+                <div class="resource-header">
+                    <div class="emblem-placeholder"><img src="assets/logo-prodvizheniya.jpg" alt="ПроДвижения" width="64" height="64" loading="lazy"></div>
+                    <div class="resource-name">ПроДвижения</div>
+                </div>
+                <div class="social-buttons">
+                    <a href="https://max.ru/join/gNJ8JUTdLvJ61Vw_f7iaHQUmTsYtoffTjUPml7naMEU" target="_blank" class="social-btn max" title="МАХ">
+                        <img src="assets/icon-max.png" alt="МАХ" width="24" height="24">
+                    </a>
+                    <div class="social-btn disabled" title="ВК недоступен">
+                        <img src="assets/icon-vk.png" alt="ВКонтакте" width="24" height="24">
+                    </div>
+                    <div class="social-btn disabled" title="ТГ недоступен">
+                        <img src="assets/icon-tg.png" alt="Телеграм" width="24" height="24">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
